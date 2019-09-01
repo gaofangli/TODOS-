@@ -51,7 +51,7 @@ Page({
   removeTodoHandle(e){
     var todos = this.data.todos
     // item就是splice方法中移除掉的元素
-   var item = todos.splice(e.currentTarget.dataset.index,1) //得到的是一个长度为1的数组并且是对象
+  //  var item = todos.splice(e.currentTarget.dataset.index,1) //得到的是一个长度为1的数组并且是对象
     var item = todos.splice(e.currentTarget.dataset.index, 1)[0]//删除那个对象
    console.log(item)
    var leftCount = this.data.leftCount-(item.completed?0:1)
@@ -80,7 +80,7 @@ Page({
     // })
     //todos => 新的未完成的任务列
     var todos = this.data.todos.filter(function(item){
-      return !item.completed
+      return !item.completed//返回完成的数据  也就是过滤
     })
     this.setData({todos:todos})
   }
